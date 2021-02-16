@@ -15,14 +15,14 @@ public class Enemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsFacingRight())
-        {
-            myRigidBody.velocity = new Vector2(moveSpeed, 0f);
-        }
-        else
-        {
-            myRigidBody.velocity = new Vector2(-moveSpeed, 0f);
-        }
+        //if (IsFacingRight())
+        //{
+        //    myRigidBody.velocity = new Vector2(moveSpeed, 0f);
+        //}
+        //else
+        //{
+        //    myRigidBody.velocity = new Vector2(-moveSpeed, 0f);
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)
