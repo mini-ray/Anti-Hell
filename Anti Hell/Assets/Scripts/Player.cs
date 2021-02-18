@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] Vector2 deathKick = new Vector2(5f, 5f);
+    [SerializeField] int hp = 6;
     
     //State
     bool isAlive = true;
@@ -75,10 +76,19 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        //if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        if (hp == 0)
         {
-            myAnimator.SetTrigger("Die");
+            
+            isAlive = false;
+            myAnimator.SetTrigger("Dead");
             GetComponent<Rigidbody2D>().velocity = deathKick;
         }
+    }
+
+    private void Health()
+    {
+        
+        
     }
 }
