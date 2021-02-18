@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] Vector2 deathKick = new Vector2(5f, 5f);
     [SerializeField] int hp = 6;
-    
+    [SerializeField] bool invuln = false;
+    [SerializeField] float invulnTime = 1.0f;
+    float invulnTimer = 0;
     //State
     bool isAlive = true;
     
@@ -39,9 +41,21 @@ public class Player : MonoBehaviour
         Jump();
         FlipSprite();
         Die();
-        
+        Health();
+        Invulnerable();
     }
-
+    private void Invulnerable()
+    {
+        if (invuln && invulnTimer < invulnTime)
+        {
+            invulnTimer += Time.deltaTime;
+        }
+        else
+        {
+            invulnTimer = 0;
+            invuln = false;
+        }
+    }
     private void Run()
     {
         float controlThrow = CrossPlatformInputManager.GetAxis("Horizontal");
@@ -76,7 +90,7 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        //if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        
         if (hp == 0)
         {
             
@@ -88,7 +102,13 @@ public class Player : MonoBehaviour
 
     private void Health()
     {
-        
-        
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy")) && !invuln)
+        {
+            hp--;
+            invuln = true;
+            Debug.Log(hp);
+        }
+
+
     }
 }
