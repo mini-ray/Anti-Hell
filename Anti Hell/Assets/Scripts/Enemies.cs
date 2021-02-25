@@ -28,7 +28,7 @@ public class Enemies : MonoBehaviour
     void Update()
     {
         Health();
-        Die();
+        //Die();
         if (IsFacingRight())
         {
             myRigidBody.velocity = new Vector2(moveSpeed, 0f);
@@ -68,6 +68,7 @@ public class Enemies : MonoBehaviour
         {
             hp-=Weapon.damage;
             invuln = true;
+            myAnimator.SetBool("Hurt",true);
             Debug.Log("Ouch");
             
         }
