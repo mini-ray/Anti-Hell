@@ -20,6 +20,7 @@ public class Enemies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        myAnimator = GetComponent<Animator>();
         myRigidBody = GetComponent<Rigidbody2D>();
         myBodyCollider = GetComponent<CapsuleCollider2D>();
     }
@@ -59,6 +60,7 @@ public class Enemies : MonoBehaviour
             isAlive = false;
             myAnimator.SetTrigger("Dead");
             GetComponent<Rigidbody2D>().velocity = deathKick;
+            Destroy(gameObject, 2f);
         }
     }
 
@@ -70,7 +72,11 @@ public class Enemies : MonoBehaviour
             invuln = true;
             myAnimator.SetBool("Hurt",true);
             Debug.Log("Ouch");
-            
+            //IEnumerator UpdateCoroutine()
+            //{
+            //    yield return new WaitForSeconds(1);
+            //}
+            //myAnimator.SetBool("Hurt",false);
         }
 
 
