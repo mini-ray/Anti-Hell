@@ -30,6 +30,8 @@ public class Enemies : MonoBehaviour
     {
         Health();
         //Die();
+        Invulnerable();
+
         if (IsFacingRight())
         {
             myRigidBody.velocity = new Vector2(moveSpeed, 0f);
@@ -72,18 +74,23 @@ public class Enemies : MonoBehaviour
             invuln = true;
             myAnimator.SetBool("Hurt",true);
             Debug.Log("Ouch");
-            //IEnumerator UpdateCoroutine()
-            //{
-            //    yield return new WaitForSeconds(1);
-            //}
-            //myAnimator.SetBool("Hurt",false);
+            invuln = true;
+            myAnimator.SetBool("Hurt",false);
         }
 
 
     }
 
-    private void Healt()
+    private void Invulnerable()
     {
-
+        if (invuln && invulnTimer < invulnTime)
+        {
+            invulnTimer += Time.deltaTime;
+        }
+        else
+        {
+            invulnTimer = 0;
+            invuln = false;
+        }
     }
 }
