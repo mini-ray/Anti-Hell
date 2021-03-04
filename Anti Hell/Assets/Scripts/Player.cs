@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     //Config
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
-    [SerializeField] Vector2 deathKick = new Vector2(5f, 5f);
+    [SerializeField] Vector2 deathKick = new Vector2(3f, 3f);
     [SerializeField] int hp = 6;
     [SerializeField] bool invuln = false;
     [SerializeField] float invulnTime = 1.0f;

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
+    [SerializeField] float startSpeed = 1f;
     [SerializeField] float moveSpeed = 1f;
     [SerializeField] int hp = 3;
     [SerializeField] Vector2 deathKick = new Vector2(5f, 5f);
     [SerializeField] bool invuln = false;
     [SerializeField] float invulnTime = 1.0f;
     float invulnTimer = 0;
+    //[SerializeField] AudioClip InteractionSFX;
 
     bool isAlive = true;
 
@@ -29,7 +31,7 @@ public class Enemies : MonoBehaviour
     void Update()
     {
         Health();
-        //Die();
+        Die();
         Invulnerable();
 
         if (IsFacingRight())
@@ -60,7 +62,8 @@ public class Enemies : MonoBehaviour
         {
 
             isAlive = false;
-            myAnimator.SetTrigger("Dead");
+            myAnimator.SetBool("Dead", true);
+            moveSpeed = 0;
             GetComponent<Rigidbody2D>().velocity = deathKick;
             Destroy(gameObject, 2f);
         }
@@ -70,12 +73,19 @@ public class Enemies : MonoBehaviour
     {
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Weapon")) && !invuln)
         {
-            hp-=Weapon.damage;
+            hp -= Weapon.damage;
             invuln = true;
-            myAnimator.SetBool("Hurt",true);
-            Debug.Log("Ouch");
+            myAnimator.SetBool("Hurt", true);
+            //AudioSource.PlayClipAtPoint(InteractionSFX, Camera.main.transform.position);
+            //Debug.Log("Ouch");
             invuln = true;
-            myAnimator.SetBool("Hurt",false);
+            moveSpeed = 0;
+
+        }
+        else if (!invuln)
+        {
+            myAnimator.SetBool("Hurt", false);
+            moveSpeed = startSpeed;
         }
 
 
