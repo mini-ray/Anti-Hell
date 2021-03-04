@@ -122,4 +122,12 @@ public class Player : MonoBehaviour
             Instantiate(Weapon, transform.position, Quaternion.identity);
         }
     }
+
+    private void Money()
+    {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Money")))
+        {
+
+        }
+    }
 }
