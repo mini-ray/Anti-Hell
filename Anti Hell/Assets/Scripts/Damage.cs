@@ -5,8 +5,9 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     [SerializeField] GameObject Weapon;
-    [SerializeField] bool atack = false;
-    
+    [SerializeField] GameObject Blast;
+
+
 
     Animator myAnimator;
 
@@ -21,7 +22,7 @@ public class Damage : MonoBehaviour
     void Update()
     {
         Attack();
-        
+        Shoot();
     }
 
     private void Attack()
@@ -35,5 +36,14 @@ public class Damage : MonoBehaviour
         }
     }
 
-    
+    private void Shoot()
+    {
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Instantiate(Blast, transform.position, Quaternion.identity);
+            myAnimator.SetTrigger("Pew");
+
+
+        }
+    }
 }
