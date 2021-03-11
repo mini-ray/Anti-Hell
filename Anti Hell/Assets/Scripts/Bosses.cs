@@ -41,12 +41,12 @@ public class Bosses : MonoBehaviour
 
         if (IsFacingLeft())
         {
-            myRigidBody.velocity = new Vector2(-moveSpeed, 0f);
+            myRigidBody.velocity = new Vector2(moveSpeed, 0f);
             //Debug.Log("Left");
         }
         else
         {
-            myRigidBody.velocity = new Vector2(moveSpeed, 0f);
+            myRigidBody.velocity = new Vector2(-moveSpeed, 0f);
             //Debug.Log("Right");
         }
     }
@@ -59,11 +59,11 @@ public class Bosses : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         transform.localScale = new Vector2(-(Mathf.Sign(myRigidBody.velocity.x)), 1f);
-
+        //Debug.Log("done");
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
     }
     private void Die()
     {

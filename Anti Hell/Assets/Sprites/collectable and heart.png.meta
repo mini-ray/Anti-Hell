@@ -1,37 +1,25 @@
 fileFormatVersion: 2
-guid: 343aaeca94f59054395037769622ae6d
+guid: ecd09f889c99d114cb4423faf2da952d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3582569356552916313
-    second: catenemy with hurt_0
+      213: -2517748746235065427
+    second: collectable and heart_0
   - first:
-      213: 5222802353944350306
-    second: catenemy with hurt_1
+      213: 1665708832154602554
+    second: collectable and heart_1
   - first:
-      213: 2805583383524521034
-    second: catenemy with hurt_2
+      213: -7031834769061648089
+    second: collectable and heart_2
   - first:
-      213: -4390541343559824006
-    second: catenemy with hurt_3
+      213: 6705423693533854113
+    second: collectable and heart_3
   - first:
-      213: -886628591495420487
-    second: catenemy with hurt_4
+      213: 9001479258511687416
+    second: collectable and heart_4
   - first:
-      213: -8686468412365328399
-    second: catenemy with hurt_5
-  - first:
-      213: 4081250362259479969
-    second: catenemy with hurt_6
-  - first:
-      213: 315364483819429827
-    second: catenemy with hurt_7
-  - first:
-      213: -5681416594237997821
-    second: catenemy with hurt_8
-  - first:
-      213: 4518559892115113892
-    second: catenemy with hurt_9
+      213: 2236268973445087058
+    second: collectable and heart_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -75,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -94,7 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,70 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: catenemy with hurt_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a2b677c628284ec0800000000000000
-      internalID: -3582569356552916313
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catenemy with hurt_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26e4deeb11f1b7840800000000000000
-      internalID: 5222802353944350306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catenemy with hurt_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a44b7b2093f6fe620800000000000000
-      internalID: 2805583383524521034
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catenemy with hurt_3
+      name: collectable and heart_0
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7d437df8e9a113c0800000000000000
-      internalID: -4390541343559824006
+      spriteID: dab49fadad82f0dd0800000000000000
+      internalID: -2517748746235065427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catenemy with hurt_4
+      name: collectable and heart_1
       rect:
         serializedVersion: 2
         x: 64
@@ -215,35 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b5e53c5eff02b3f0800000000000000
-      internalID: -886628591495420487
+      spriteID: a3c4ec78b59cd1710800000000000000
+      internalID: 1665708832154602554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catenemy with hurt_5
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ff20587007737780800000000000000
-      internalID: -8686468412365328399
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catenemy with hurt_6
+      name: collectable and heart_2
       rect:
         serializedVersion: 2
         x: 0
@@ -257,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ad19e1c49383a830800000000000000
-      internalID: 4081250362259479969
+      spriteID: 729e6d6a887e96e90800000000000000
+      internalID: -7031834769061648089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catenemy with hurt_7
+      name: collectable and heart_3
       rect:
         serializedVersion: 2
         x: 64
@@ -278,35 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cfd4d0c356606400800000000000000
-      internalID: 315364483819429827
+      spriteID: 1a9b29982537e0d50800000000000000
+      internalID: 6705423693533854113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catenemy with hurt_8
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30d3f6f75bd8721b0800000000000000
-      internalID: -5681416594237997821
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catenemy with hurt_9
+      name: collectable and heart_4
       rect:
         serializedVersion: 2
         x: 0
@@ -320,8 +203,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a749d1184625be30800000000000000
-      internalID: 4518559892115113892
+      spriteID: 8feb2a891bdabec70800000000000000
+      internalID: 9001479258511687416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collectable and heart_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ffb6878c2d80f10800000000000000
+      internalID: 2236268973445087058
       vertices: []
       indices: 
       edges: []

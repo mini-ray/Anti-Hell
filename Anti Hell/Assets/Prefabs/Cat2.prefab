@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8706120622763661954}
   - component: {fileID: 2723983956422652039}
   - component: {fileID: 2723983956422652038}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cat2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,19 +44,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8829065890790548999}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2380086594294338397
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.55347013, y: -0.64654243}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -81,7 +81,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.18431759, y: 0.53402305}
   m_EdgeRadius: 0
 --- !u!70 &546939465970685354
 CapsuleCollider2D:
@@ -96,8 +96,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: 0.0045723915, y: -0.06401372}
+  m_Size: {x: 0.8383579, y: 0.87197256}
   m_Direction: 0
 --- !u!212 &8706120622763661954
 SpriteRenderer:
@@ -160,7 +160,7 @@ Animator:
   m_GameObject: {fileID: 8829065890790548999}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e72b8227092ee234d83448210c3c38af, type: 2}
+  m_Controller: {fileID: 9100000, guid: a85898b7c0a01b0499888c65baec64a2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -181,4 +181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5366004ac7443b4c8048cbe8016de53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  startSpeed: 3
+  moveSpeed: 3
+  hp: 3
+  deathKick: {x: 5, y: 5}
+  invuln: 0
+  invulnTime: 0.5
+  CoinPickup: {fileID: 5324287813779292827, guid: 16cc7359fbd65eb44acffcd13f6919c5,
+    type: 3}

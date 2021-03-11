@@ -58,6 +58,7 @@ public class Enemies : MonoBehaviour
     {
         transform.localScale = new Vector2(-(Mathf.Sign(myRigidBody.velocity.x)), 1f);
         
+        
     }
 
     private void Die()
@@ -70,7 +71,7 @@ public class Enemies : MonoBehaviour
             myAnimator.SetBool("Dead", true);
             moveSpeed = 0;
             GetComponent<Rigidbody2D>().velocity = deathKick;
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 1f);
         }
     }
 

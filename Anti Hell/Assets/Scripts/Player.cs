@@ -13,8 +13,9 @@ public class Player : MonoBehaviour
     [SerializeField] bool invuln = false;
     [SerializeField] float invulnTime = 1.0f;
     float invulnTimer = 0;
-    [SerializeField] GameObject Weapon;
     
+    
+
     //State
     bool isAlive = true;
     
@@ -45,7 +46,7 @@ public class Player : MonoBehaviour
         Die();
         Health();
         Invulnerable();
-        Attack();
+        
     }
     private void Invulnerable()
     {
@@ -115,13 +116,7 @@ public class Player : MonoBehaviour
 
     }
 
-    private void Attack()
-    {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Instantiate(Weapon, transform.position, Quaternion.identity);
-        }
-    }
+    
 
     private void Money()
     {
@@ -130,4 +125,6 @@ public class Player : MonoBehaviour
 
         }
     }
+
+    
 }
