@@ -11,7 +11,7 @@ public class Enemies : MonoBehaviour
     [SerializeField] bool invuln = false;
     [SerializeField] float invulnTime = 1.0f;
     float invulnTimer = 0;
-    //[SerializeField] AudioClip InteractionSFX;
+    [SerializeField] AudioClip InteractionSFX;
     [SerializeField] GameObject CoinPickup;
 
 
@@ -82,7 +82,7 @@ public class Enemies : MonoBehaviour
             hp -= Weapon.damage;
             invuln = true;
             myAnimator.SetBool("Hurt", true);
-            //AudioSource.PlayClipAtPoint(InteractionSFX, Camera.main.transform.position);
+            AudioSource.PlayClipAtPoint(InteractionSFX, Camera.main.transform.position);
             //Debug.Log("Ouch");
             invuln = true;
             moveSpeed = 0;

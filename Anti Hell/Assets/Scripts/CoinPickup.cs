@@ -5,7 +5,7 @@ using UnityEngine;
 public class CoinPickup : MonoBehaviour
 {
 
-    //[SerializeField] AudioClip coinPickUpSFX;
+    [SerializeField] AudioClip coinPickUpSFX;
 
     BoxCollider2D myBodyCollider;
 
@@ -19,7 +19,7 @@ public class CoinPickup : MonoBehaviour
         //Debug.Log("foo");
         if(collision.gameObject.name == "Player")
         {
-            //AudioSource.PlayClipAtPoint(coinPickUpSFX, Camera.main.transform.position);
+            AudioSource.PlayClipAtPoint(coinPickUpSFX, Camera.main.transform.position);
             Destroy(gameObject);
             //Debug.Log("boo");
         }

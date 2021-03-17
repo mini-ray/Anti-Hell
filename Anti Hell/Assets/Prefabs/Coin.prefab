@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6dbc94b6e7c5040aa36ce44cf0cc5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinPickUpSFX: {fileID: 8300000, guid: 6aaa77c80ece1b340b82e8d61f34a77a, type: 3}
 --- !u!61 &2890254297958253274
 BoxCollider2D:
   m_ObjectHideFlags: 0

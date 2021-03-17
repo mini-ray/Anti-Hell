@@ -187,4 +187,5 @@ MonoBehaviour:
   deathKick: {x: 5, y: 5}
   invuln: 0
   invulnTime: 1
+  InteractionSFX: {fileID: 8300000, guid: 984ffc11dc853974c9e5688acb67ae14, type: 3}
   CoinPickup: {fileID: 0}
