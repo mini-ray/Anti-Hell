@@ -15,6 +15,11 @@ public class Bosses : MonoBehaviour
     [SerializeField] AudioClip InteractionSFX2;
     [SerializeField] AudioClip InteractionSFX3;
     [SerializeField] GameObject CoinPickup;
+    [SerializeField] GameObject Player;
+    [SerializeField] bool cooldown = false;
+    [SerializeField] float cooldownTime = 1.0f;
+    float cooldownTimer = 0;
+    [SerializeField] GameObject BossBlast;
 
 
     bool droppedCoin = false;
@@ -23,6 +28,7 @@ public class Bosses : MonoBehaviour
     Rigidbody2D myRigidBody;
     Animator myAnimator;
     CapsuleCollider2D myBodyCollider;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +45,8 @@ public class Bosses : MonoBehaviour
         Drops();
         Die();
         Invulnerable();
+        Attack();
+        Cooldown();
 
 
         if (IsFacingLeft())
@@ -51,6 +59,8 @@ public class Bosses : MonoBehaviour
             myRigidBody.velocity = new Vector2(-moveSpeed, 0f);
             //Debug.Log("Right");
         }
+
+        
     }
 
     bool IsFacingLeft()
@@ -63,10 +73,18 @@ public class Bosses : MonoBehaviour
         transform.localScale = new Vector2(-(Mathf.Sign(myRigidBody.velocity.x)), 1f);
         //Debug.Log("done");
     }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        //Debug.Log(collision.gameObject.name);
-    }
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Player")) && !invuln)
+    //    {
+    //        myAnimator.SetBool("Attack", true);
+    //        //Debug.Log(collision.gameObject.name);
+    //    }
+    //    else
+    //    {
+    //        myAnimator.SetBool("Attack", false);
+    //    }
+    //}
     private void Die()
     {
 
@@ -94,6 +112,7 @@ public class Bosses : MonoBehaviour
             //Debug.Log("Ouch");
             invuln = true;
             moveSpeed = 0;
+            
 
         }
         else if (!invuln)
@@ -110,6 +129,7 @@ public class Bosses : MonoBehaviour
         if (invuln && invulnTimer < invulnTime)
         {
             invulnTimer += Time.deltaTime;
+            moveSpeed = 0;
         }
         else
         {
@@ -127,4 +147,40 @@ public class Bosses : MonoBehaviour
             droppedCoin = true;
         }
     }
+
+    private void Attack()
+    {
+        float distance = Vector3.Distance(gameObject.transform.position, Player.transform.position);
+        //Debug.Log(distance);
+        if (distance <= 5 && !cooldown)
+        {
+            myAnimator.SetBool("Attack", true);
+            var blast = Instantiate(BossBlast, transform.position, Quaternion.identity);
+            blast.GetComponent<EnemyBlast>().moveDir = myRigidBody.velocity.normalized;
+            //Debug.Log("BANG");
+            moveSpeed = 0;
+            cooldown = true;
+        }
+        else
+        {
+            moveSpeed = startSpeed;
+            myAnimator.SetBool("Attack", false);
+            //Debug.Log("Peace");
+        }
+    }
+
+    private void Cooldown()
+    {
+        if (cooldown && cooldownTimer < cooldownTime)
+        {
+            cooldownTimer += Time.deltaTime;
+            //Debug.Log("Halt");
+        }
+        else
+        {
+            cooldownTimer = 0;
+            cooldown = false;
+        }
+    }
+
 }

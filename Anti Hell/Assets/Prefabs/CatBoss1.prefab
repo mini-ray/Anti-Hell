@@ -96,8 +96,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.020204091, y: -0.18088736}
-  m_Size: {x: 1.7526584, y: 1.6287827}
+  m_Offset: {x: 0.00039653556, y: -0.11902423}
+  m_Size: {x: 1.762283, y: 1.762283}
   m_Direction: 1
 --- !u!212 &3760780024828047373
 SpriteRenderer:
@@ -191,3 +191,7 @@ MonoBehaviour:
   InteractionSFX2: {fileID: 8300000, guid: 3d5e0b52c47eab84ebad33a278ffc77c, type: 3}
   InteractionSFX3: {fileID: 8300000, guid: a9fd39d4edc0eb44d86efa273a6f3978, type: 3}
   CoinPickup: {fileID: 0}
+  Player: {fileID: 0}
+  cooldown: 0
+  cooldownTime: 5
+  BossBlast: {fileID: 0}
