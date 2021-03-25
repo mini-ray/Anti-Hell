@@ -10,12 +10,14 @@ public class Damage : MonoBehaviour
 
 
     Animator myAnimator;
+    Rigidbody2D myRigidBody;
 
 
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = transform.parent.GetComponent<Animator>();
+        myRigidBody = transform.parent.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -40,8 +42,11 @@ public class Damage : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2"))
         {
-            Instantiate(Blast, transform.position, Quaternion.identity);
+           
+            var blast = Instantiate(Blast, transform.position, Quaternion.identity);
+            blast.GetComponent<Blast>().moveDir = new Vector2(transform.parent.localScale.x, 0);
             myAnimator.SetTrigger("Pew");
+            //ammo -= 1;
 
 
         }

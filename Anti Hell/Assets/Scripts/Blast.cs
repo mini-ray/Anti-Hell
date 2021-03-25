@@ -6,7 +6,7 @@ public class Blast : MonoBehaviour
 {
     [SerializeField] public static int damage = 1;
     [SerializeField] float moveSpeed = 1f;
-
+    [SerializeField] public Vector3 moveDir;
     Rigidbody2D myRigidBody;
     Animator myAnimator;
     BoxCollider2D myBodyCollider;
@@ -30,6 +30,8 @@ public class Blast : MonoBehaviour
         //{
         //    myRigidBody.velocity = new Vector2(-moveSpeed, 0f);
         //}
+
+        myRigidBody.velocity = moveDir * moveSpeed;
     }
 
     bool IsFacingRight()
@@ -44,11 +46,12 @@ public class Blast : MonoBehaviour
 
     private void DestroyObjectDelayed()
     {
-        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        Destroy(gameObject, 5f);
+        /*if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy","Ground")))
         {
             // Kills the game object in 5 seconds after loading the object
-            Destroy(gameObject, 5f);
-        }
+            Destroy(gameObject, .5f);
+        }*/
     }
 
 

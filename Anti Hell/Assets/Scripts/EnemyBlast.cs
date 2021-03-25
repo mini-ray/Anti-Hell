@@ -39,10 +39,11 @@ public class EnemyBlast : MonoBehaviour
 
     private void DestroyObjectDelayed()
     {
+        Destroy(gameObject, .5f);
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Player", "Ground")))
         {
             // Kills the game object in 5 seconds after loading the object
-            Destroy(gameObject, 5f);
+            Destroy(gameObject, .5f);
         }
     }
 }

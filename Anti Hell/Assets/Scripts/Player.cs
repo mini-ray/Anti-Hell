@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] bool invuln = false;
     [SerializeField] float invulnTime = 1.0f;
     float invulnTimer = 0;
+    [SerializeField] float ammo = 3f;
     
     
 
@@ -89,6 +90,7 @@ public class Player : MonoBehaviour
         if (playerHasHorizontalSpeed)
         {
             transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
+            
         }
     }
 
@@ -116,7 +118,14 @@ public class Player : MonoBehaviour
 
     }
 
-    
+    public void Ammo()
+    {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Ammo")))
+        {
+            ammo += 1;
+        }
+
+    }
 
     private void Money()
     {
