@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -14,12 +15,12 @@ public class Player : MonoBehaviour
     [SerializeField] float invulnTime = 1.0f;
     float invulnTimer = 0;
     [SerializeField] float ammo = 3f;
-    
-    
+    [SerializeField] float LevelLoadDelay = 1f;
+
 
     //State
     bool isAlive = true;
-    
+
     //Cached conponent references
     Rigidbody2D myRigidBody;
     Animator myAnimator;
@@ -47,7 +48,7 @@ public class Player : MonoBehaviour
         Die();
         Health();
         Invulnerable();
-        
+
     }
     private void Invulnerable()
     {
@@ -90,21 +91,23 @@ public class Player : MonoBehaviour
         if (playerHasHorizontalSpeed)
         {
             transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
-            
+
         }
     }
 
     private void Die()
     {
-        
+
         if (hp == 0)
         {
-            
+
             isAlive = false;
             myAnimator.SetTrigger("Dead");
             GetComponent<Rigidbody2D>().velocity = deathKick;
+            StartCoroutine(LoadNextLevel());
         }
     }
+
 
     private void Health()
     {
@@ -134,6 +137,13 @@ public class Player : MonoBehaviour
 
         }
     }
+    IEnumerator LoadNextLevel()
+    {
+        yield return new WaitForSecondsRealtime(LevelLoadDelay);
+        var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
+        Debug.Log("WIP");
+    }
 
-    
+
 }

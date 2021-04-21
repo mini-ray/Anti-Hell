@@ -51,7 +51,7 @@ public class NextLevel : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(LevelLoadDelay);
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        SceneManager.LoadScene(currentSceneIndex + 2);
         Debug.Log("WIP");
     }
 }

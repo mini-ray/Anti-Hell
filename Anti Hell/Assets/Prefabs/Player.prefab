@@ -250,6 +250,7 @@ MonoBehaviour:
   runSpeed: 5
   jumpSpeed: 5
   deathKick: {x: 5, y: 5}
-  hp: 60
+  hp: 6
   invuln: 0
   invulnTime: 1
+  ammo: 3
